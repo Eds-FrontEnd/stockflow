@@ -80,7 +80,9 @@ export class TableProductComponent implements AfterViewInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['data']) {
-      this.dataSource.data = this.data;
+      this.dataSource.data = this.data.map((d) =>
+        this.atualizarEstoqueDinamico(d)
+      );
     }
   }
 
@@ -94,23 +96,39 @@ export class TableProductComponent implements AfterViewInit, OnChanges {
       : baseColumns;
   }
 
+  private atualizarEstoqueDinamico(row: Produto): Produto {
+    const historicoEstorno = row.historicoEstoque ?? [];
+    const historicoSaida = row.historicoSaida ?? [];
+
+    if (historicoEstorno.length > 0) {
+      const ultimoEstorno = historicoEstorno[historicoEstorno.length - 1];
+      return { ...row, estoque: ultimoEstorno };
+    }
+
+    if (historicoSaida.length > 0) {
+      const ultimoSaida = historicoSaida[historicoSaida.length - 1];
+      return { ...row, estoque: ultimoSaida };
+    }
+
+    return row;
+  }
+
   onAction(type: keyof TableActionsProducts, row: Produto): void {
     let updatedRow = row;
 
     if (type === 'estornar') {
-      const quantidadeAtual = Number(row.estoque);
-      const valorEstornado = -Math.abs(quantidadeAtual);
-      const estoqueFinal = 0;
+      const qtdAtual = Number(row.estoque);
 
       updatedRow = {
         ...row,
-        estoque: estoqueFinal,
+        estoque: 0,
         historicoEstoque: [
           ...(row.historicoEstoque ?? []),
-          quantidadeAtual,
-          valorEstornado,
-          estoqueFinal,
+          qtdAtual,
+          -qtdAtual,
+          0,
         ],
+        historicoSaida: [...(row.historicoSaida ?? [])], // NÃO MUDA
       };
     }
 
@@ -120,25 +138,25 @@ export class TableProductComponent implements AfterViewInit, OnChanges {
       if (quantidadeSaida !== null) {
         const valorSaida = Number(quantidadeSaida);
         const estoqueAtual = Number(row.estoque);
+
+        if (isNaN(valorSaida) || valorSaida < 0) return;
+
         const novoEstoque = estoqueAtual - valorSaida;
 
         updatedRow = {
           ...row,
-          estoque: novoEstoque,
           historicoSaida: [
             ...(row.historicoSaida ?? []),
             estoqueAtual,
             -valorSaida,
             novoEstoque,
           ],
+          estoque: novoEstoque,
         };
-
-        if (novoEstoque < 0) {
-          alert('Quantidade de saída maior do que o estoque disponível.');
-          return;
-        }
       }
     }
+
+    updatedRow = this.atualizarEstoqueDinamico(updatedRow);
 
     this.action.emit({ type, row: updatedRow });
   }

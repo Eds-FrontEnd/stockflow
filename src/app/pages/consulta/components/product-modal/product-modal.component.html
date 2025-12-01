@@ -125,10 +125,7 @@
       mat-raised-button
       color="primary"
       [disabled]="
-        !data.codigoProduto ||
-        !data.descricaoProduto ||
-        !data.estoque ||
-        !isUnidadesValid()
+        !data.codigoProduto || !data.descricaoProduto || !isUnidadesValid()
       "
       [mat-dialog-close]="data"
     >

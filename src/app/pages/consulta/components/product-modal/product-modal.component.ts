@@ -59,7 +59,9 @@ export class DialogOverviewProductDialog {
   }
 
   isUnidadesValid(): boolean {
-    return this.data.unidades.some((u) => u.unidade && u.fator > 0);
+    return this.data.unidades.some(
+      (u) => u.unidade.trim().length > 0 && u.fator >= 0
+    );
   }
 
   onUnidadeChange(unidadeObj: { unidade: string }) {
