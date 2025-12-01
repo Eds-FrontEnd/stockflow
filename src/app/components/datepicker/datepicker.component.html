@@ -1,0 +1,50 @@
+<form [formGroup]="range" class="date-range-form">
+  <mat-form-field appearance="outline">
+    <mat-label>Data Início</mat-label>
+    <input
+      matInput
+      formControlName="start"
+      [matDatepicker]="pickerStart"
+      [min]="minDate"
+      [max]="maxDate"
+      readonly
+      (click)="pickerStart.open()"
+    />
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="pickerStart"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #pickerStart></mat-datepicker>
+    <span
+      class="btn-clear"
+      role="button"
+      type="button"
+      (click)="clearRange()"
+      alt="Limpar campos datas"
+      >x</span
+    >
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Data Fim</mat-label>
+    <input
+      matInput
+      formControlName="end"
+      [matDatepicker]="pickerEnd"
+      [min]="range.get('start')?.value || minDate"
+      [max]="maxDate"
+      [readonly]="!range.get('start')?.value"
+      (click)="onEndClick(pickerEnd)"
+    />
+    <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+    <mat-datepicker #pickerEnd></mat-datepicker>
+    <span
+      class="btn-clear"
+      role="button"
+      type="button"
+      (click)="clearRange()"
+      alt="Limpar campos datas"
+      >x</span
+    >
+  </mat-form-field>
+</form>

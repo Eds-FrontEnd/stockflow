@@ -1,0 +1,257 @@
+[
+  {
+    "id": 1,
+    "vendedor": "João Silva",
+    "valor": 1200.50,
+    "comissao": 60.25,
+    "dataCriacao": "2025-10-01"
+  },
+  {
+    "id": 2,
+    "vendedor": "João Silva",
+    "valor": 950.75,
+    "comissao": 47.57,
+    "dataCriacao": "2025-10-02"
+  },
+  {
+    "id": 3,
+    "vendedor": "João Silva",
+    "valor": 1800.00,
+    "comissao": 90.00,
+    "dataCriacao": "2025-10-03"
+  },
+  {
+    "id": 4,
+    "vendedor": "João Silva",
+    "valor": 1400.30,
+    "comissao": 70.05,
+    "dataCriacao": "2025-10-04"
+  },
+  {
+    "id": 5,
+    "vendedor": "João Silva",
+    "valor": 1100.90,
+    "comissao": 55.45,
+    "dataCriacao": "2025-10-05"
+  },
+  {
+    "id": 6,
+    "vendedor": "João Silva",
+    "valor": 1550.00,
+    "comissao": 77.50,
+    "dataCriacao": "2025-10-06"
+  },
+  {
+    "id": 7,
+    "vendedor": "João Silva",
+    "valor": 1700.80,
+    "comissao": 85.04,
+    "dataCriacao": "2025-10-07"
+  },
+  {
+    "id": 8,
+    "vendedor": "João Silva",
+    "valor": 250.30,
+    "comissao": 2.50,
+    "dataCriacao": "2025-10-08"
+  },
+  {
+    "id": 9,
+    "vendedor": "João Silva",
+    "valor": 480.75,
+    "comissao": 4.81,
+    "dataCriacao": "2025-10-09"
+  },
+  {
+    "id": 10,
+    "vendedor": "João Silva",
+    "valor": 320.40,
+    "comissao": 3.20,
+    "dataCriacao": "2025-10-10"
+  },
+
+  {
+    "id": 11,
+    "vendedor": "Maria Souza",
+    "valor": 2100.40,
+    "comissao": 105.02,
+    "dataCriacao": "2025-10-11"
+  },
+  {
+    "id": 12,
+    "vendedor": "Maria Souza",
+    "valor": 1350.60,
+    "comissao": 67.53,
+    "dataCriacao": "2025-10-12"
+  },
+  {
+    "id": 13,
+    "vendedor": "Maria Souza",
+    "valor": 950.20,
+    "comissao": 47.51,
+    "dataCriacao": "2025-10-13"
+  },
+  {
+    "id": 14,
+    "vendedor": "Maria Souza",
+    "valor": 1600.75,
+    "comissao": 80.04,
+    "dataCriacao": "2025-10-14"
+  },
+  {
+    "id": 15,
+    "vendedor": "Maria Souza",
+    "valor": 1750.00,
+    "comissao": 87.50,
+    "dataCriacao": "2025-10-15"
+  },
+  {
+    "id": 16,
+    "vendedor": "Maria Souza",
+    "valor": 1450.90,
+    "comissao": 72.55,
+    "dataCriacao": "2025-10-16"
+  },
+  {
+    "id": 17,
+    "vendedor": "Maria Souza",
+    "valor": 400.50,
+    "comissao": 4.00,
+    "dataCriacao": "2025-10-17"
+  },
+  {
+    "id": 18,
+    "vendedor": "Maria Souza",
+    "valor": 180.20,
+    "comissao": 1.80,
+    "dataCriacao": "2025-10-18"
+  },
+  {
+    "id": 19,
+    "vendedor": "Maria Souza",
+    "valor": 90.75,
+    "comissao": 0,
+    "dataCriacao": "2025-10-19"
+  },
+
+  {
+    "id": 20,
+    "vendedor": "Carlos Oliveira",
+    "valor": 800.50,
+    "comissao": 40.02,
+    "dataCriacao": "2025-10-20"
+  },
+  {
+    "id": 21,
+    "vendedor": "Carlos Oliveira",
+    "valor": 1200.00,
+    "comissao": 60.00,
+    "dataCriacao": "2025-10-21"
+  },
+  {
+    "id": 22,
+    "vendedor": "Carlos Oliveira",
+    "valor": 1950.30,
+    "comissao": 97.51,
+    "dataCriacao": "2025-10-22"
+  },
+  {
+    "id": 23,
+    "vendedor": "Carlos Oliveira",
+    "valor": 1750.80,
+    "comissao": 87.54,
+    "dataCriacao": "2025-10-23"
+  },
+  {
+    "id": 24,
+    "vendedor": "Carlos Oliveira",
+    "valor": 1300.60,
+    "comissao": 65.03,
+    "dataCriacao": "2025-10-24"
+  },
+  {
+    "id": 25,
+    "vendedor": "Carlos Oliveira",
+    "valor": 300.40,
+    "comissao": 3.00,
+    "dataCriacao": "2025-10-25"
+  },
+  {
+    "id": 26,
+    "vendedor": "Carlos Oliveira",
+    "valor": 500.00,
+    "comissao": 25.00,
+    "dataCriacao": "2025-10-26"
+  },
+  {
+    "id": 27,
+    "vendedor": "Carlos Oliveira",
+    "valor": 125.75,
+    "comissao": 1.257,
+    "dataCriacao": "2025-10-27"
+  },
+
+  {
+    "id": 28,
+    "vendedor": "Ana Lima",
+    "valor": 1000.00,
+    "comissao": 50.00,
+    "dataCriacao": "2025-10-28"
+  },
+  {
+    "id": 29,
+    "vendedor": "Ana Lima",
+    "valor": 1100.50,
+    "comissao": 55.02,
+    "dataCriacao": "2025-10-29"
+  },
+  {
+    "id": 30,
+    "vendedor": "Ana Lima",
+    "valor": 1250.75,
+    "comissao": 62.537,
+    "dataCriacao": "2025-10-30"
+  },
+  {
+    "id": 31,
+    "vendedor": "Ana Lima",
+    "valor": 1400.20,
+    "comissao": 70.01,
+    "dataCriacao": "2025-10-31"
+  },
+  {
+    "id": 32,
+    "vendedor": "Ana Lima",
+    "valor": 1550.90,
+    "comissao": 77.54,
+    "dataCriacao": "2025-11-01"
+  },
+  {
+    "id": 33,
+    "vendedor": "Ana Lima",
+    "valor": 1650.00,
+    "comissao": 82.50,
+    "dataCriacao": "2025-11-02"
+  },
+  {
+    "id": 34,
+    "vendedor": "Ana Lima",
+    "valor": 75.30,
+    "comissao": 0,
+    "dataCriacao": "2025-11-03"
+  },
+  {
+    "id": 35,
+    "vendedor": "Ana Lima",
+    "valor": 420.90,
+    "comissao": 4.21,
+    "dataCriacao": "2025-11-04"
+  },
+  {
+    "id": 36,
+    "vendedor": "Ana Lima",
+    "valor": 315.40,
+    "comissao": 3.15,
+    "dataCriacao": "2025-11-05"
+  }
+]

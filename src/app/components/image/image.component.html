@@ -1,0 +1,19 @@
+<figure class="image-component">
+  <img
+    [src]="src"
+    [attr.alt]="alt"
+    [attr.title]="title"
+    [attr.width]="width"
+    [attr.height]="height"
+    [attr.loading]="loading"
+    [attr.decoding]="decoding"
+    [attr.fetchpriority]="fetchpriority"
+    [attr.srcset]="srcset"
+    [attr.sizes]="sizes"
+    [class]="className"
+    [attr.aria-hidden]="ariaHidden ? 'true' : null"
+    [attr.role]="role"
+    [attr.priority]="priority ? 'true' : null"
+  />
+  <figcaption *ngIf="caption">{{ caption }}</figcaption>
+</figure>

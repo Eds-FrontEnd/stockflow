@@ -1,0 +1,93 @@
+<div class="table-container">
+  <mat-progress-bar
+    *ngIf="loading"
+    mode="indeterminate"
+    color="primary"
+  ></mat-progress-bar>
+
+  <div class="loading" *ngIf="loading"></div>
+
+  <app-filter (filterChange)="dataSource.filter = $event"></app-filter>
+
+  <app-button
+    label="+ Adicionar Produto"
+    ariaLabel="Adicionar Produto na lista de Estoque"
+    (btnClick)="addProduct()"
+    bgColor="var(--green)"
+    textColor="var(--black)"
+    class="table-button"
+  ></app-button>
+
+  <div class="table">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <ng-container *ngFor="let col of columns" [matColumnDef]="col.field">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ col.header }}
+        </th>
+
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngIf="col.field === 'estoque'; else defaultCell">
+            <div>Em Estoque: {{ row.estoque }}</div>
+
+            <div
+              *ngIf="row.historicoSaida?.length"
+              style="color: var(--blue-dark); font-size: 12px; margin-top: 3px"
+            >
+              Histórico Saída: {{ row.historicoSaida.join(", ") }}
+            </div>
+
+            <div
+              *ngIf="row.historicoEstoque?.length"
+              style="color: var(--red); font-size: 12px; margin-top: 3px"
+            >
+              Histórico Estorno: {{ row.historicoEstoque.join(", ") }}
+            </div>
+          </ng-container>
+
+          <ng-template #defaultCell>
+            {{ row[col.field] }}
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container
+        *ngIf="showActions && (actions.estornar || actions.saida)"
+        matColumnDef="actions"
+      >
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+
+        <td mat-cell *matCellDef="let row">
+          <button
+            mat-icon-button
+            color="warn"
+            *ngIf="actions.estornar"
+            matTooltip="Estornar"
+            (click)="onAction('estornar', row)"
+            [disabled]="row.historicoEstoque?.length > 0"
+          >
+            <mat-icon>undo</mat-icon>
+          </button>
+
+          <button
+            mat-icon-button
+            color="primary"
+            *ngIf="actions.saida"
+            matTooltip="Saída"
+            (click)="onAction('saida', row)"
+            [disabled]="row.historicoEstoque?.length > 0"
+          >
+            <mat-icon>exit_to_app</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="pageSizeOptions"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</div>

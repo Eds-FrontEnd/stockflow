@@ -1,0 +1,23 @@
+.btn {
+  width: fit-content;
+  min-width: 195px;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--blue-dark);
+  filter: brightness(1.2);
+  outline: none;
+  transform: translateY(-2px);
+}

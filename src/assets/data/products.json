@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "codigoProduto": 101,
+    "descricaoProduto": "Caneta Azul",
+    "estoque": 150,
+    "unidades": [
+      { "unidade": "UN", "fator": 1 },
+      { "unidade": "CX", "fator": 12 }
+    ],
+    "dataCriacao": "2025-10-01"
+  },
+  {
+    "id": 2,
+    "codigoProduto": 102,
+    "descricaoProduto": "Caderno Universitário",
+    "estoque": 75,
+    "unidades": [
+      { "unidade": "UN", "fator": 1 },
+      { "unidade": "CX", "fator": 10 }
+    ],
+    "dataCriacao": "2025-07-20"
+  },
+  {
+    "id": 3,
+    "codigoProduto": 103,
+    "descricaoProduto": "Borracha Branca",
+    "estoque": 200,
+    "unidades": [
+      { "unidade": "UN", "fator": 1 },
+      { "unidade": "DP", "fator": 5 },
+      { "unidade": "CX", "fator": 20 }
+    ],
+    "dataCriacao": "2025-06-15"
+  },
+  {
+    "id": 4,
+    "codigoProduto": 104,
+    "descricaoProduto": "Lápis Preto HB",
+    "estoque": 320,
+    "unidades": [
+      { "unidade": "UN", "fator": 1 },
+      { "unidade": "DP", "fator": 6 },
+      { "unidade": "CX", "fator": 24 }
+    ],
+    "dataCriacao": "2025-05-10"
+  },
+  {
+    "id": 5,
+    "codigoProduto": 105,
+    "descricaoProduto": "Marcador de Texto Amarelo",
+    "estoque": 90,
+    "unidades": [
+      { "unidade": "UN", "fator": 1 },
+      { "unidade": "CX", "fator": 6 }
+    ],
+    "dataCriacao": "2025-04-05"
+  }
+]

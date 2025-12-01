@@ -1,0 +1,63 @@
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  padding: 0 1rem;
+}
+
+.modal__row {
+  flex-wrap: wrap;
+  margin: 0;
+  padding-top: 4px;
+}
+
+.modal__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal__row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modal__btn-delete {
+  margin-top: -20px;
+}
+
+.modal__field--codigo {
+  flex: 1 1 25px;
+}
+
+.modal__field--descricao {
+  flex: 2 1 75px;
+}
+
+.modal__field--estoque {
+  flex: 1 1 40px;
+}
+
+.modal__unidade-row {
+  display: flex;
+  align-items: center;
+}
+
+.modal__field--unit {
+  flex: 2;
+}
+
+.modal__field--factor {
+  flex: 1;
+  margin-left: 8px;
+}
+
+.modal__add-unit {
+  align-self: flex-start;
+}
+
+.modal__actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}

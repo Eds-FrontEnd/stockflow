@@ -1,0 +1,40 @@
+.btn-clear {
+  position: absolute;
+  right: 1px;
+  color: var(--black);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.date-range-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media screen and (max-width: 750px) {
+  mat-form-field {
+    width: 46%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  mat-form-field {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .date-range-form {
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 523px) {
+  .date-range-form {
+    gap: 0;
+  }
+}

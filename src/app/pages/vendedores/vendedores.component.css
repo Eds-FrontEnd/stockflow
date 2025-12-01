@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+
+.totals {
+  position: fixed;
+  bottom: 39px;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  padding: 0 25px;
+  right: 48px;
+  z-index: 99;
+}

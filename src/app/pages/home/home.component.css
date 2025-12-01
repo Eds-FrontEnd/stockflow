@@ -1,0 +1,31 @@
+.home {
+  width: 100%;
+  min-height: 84vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: var(--white);
+  text-align: center;
+  background: linear-gradient(
+      135deg,
+      var(--blue-light) 0%,
+      var(--blue-medium) 40%,
+      var(--blue-hard) 100%
+    ),
+    radial-gradient(black 15%, transparent 16%) repeat;
+  background-size: 2px 2px;
+}
+
+.home__content h1 {
+  max-width: 525px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.home__content p {
+  font-size: 1.1rem;
+  max-width: 520px;
+  color: var(--gray-light);
+}

@@ -1,0 +1,10 @@
+<button
+  [routerLink]="link"
+  (click)="handleClick()"
+  type="button"
+  class="btn"
+  [attr.aria-label]="ariaLabel ? ariaLabel : label"
+  [ngStyle]="{ 'background-color': bgColor, color: textColor }"
+>
+  {{ label }}
+</button>

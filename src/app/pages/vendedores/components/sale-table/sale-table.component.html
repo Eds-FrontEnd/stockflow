@@ -1,0 +1,79 @@
+<div class="table-container">
+  <mat-progress-bar
+    *ngIf="loading"
+    mode="indeterminate"
+    color="primary"
+  ></mat-progress-bar>
+  <div class="loading" *ngIf="loading"></div>
+  <app-filter (filterChange)="dataSource.filter = $event"> </app-filter>
+
+  <app-button
+    label="+ Adicionar Venda"
+    ariaLabel="Adicionar Venda na lista"
+    (btnClick)="addSale()"
+    bgColor="var(--green)"
+    textColor="var(--black)"
+    class="table-button"
+  >
+  </app-button>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container *ngFor="let col of columns" [matColumnDef]="col.field">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ col.header }}
+      </th>
+
+      <td mat-cell *matCellDef="let row">
+        <ng-container [ngSwitch]="col.field">
+          <span *ngSwitchCase="'valor'">
+            {{ row.valor | currency : "BRL" : "symbol" : "1.2-2" }}
+          </span>
+
+          <span *ngSwitchCase="'comissao'">
+            {{ row.comissao | currency : "BRL" : "symbol" : "1.2-2" }}
+          </span>
+
+          <span *ngSwitchDefault>
+            {{ row[col.field] }}
+          </span>
+        </ng-container>
+      </td>
+    </ng-container>
+
+    <ng-container
+      *ngIf="showActions && (actions.editar || actions.excluir)"
+      matColumnDef="actions"
+    >
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let row">
+        <button
+          mat-icon-button
+          color="primary"
+          *ngIf="actions.editar"
+          matTooltip="Editar"
+          (click)="editSale(row)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          color="warn"
+          *ngIf="actions.excluir"
+          matTooltip="Excluir"
+          (click)="deleteSale(row)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="pageSizeOptions"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

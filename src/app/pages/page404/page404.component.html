@@ -1,0 +1,25 @@
+<main class="page404" role="main" aria-labelledby="title-404">
+  <app-image
+    src="../../../assets/images/page404.png"
+    alt="Essa rota de página não existe"
+    title="Essa rota de página não existe"
+    width="300"
+    height="300"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    [ariaHidden]="true"
+  ></app-image>
+
+  <section class="page404__info">
+    <h1>Ops...Página não encontrada</h1>
+
+    <app-button
+      label="Voltar para Home"
+      ariaLabel="Voltar para página inicial"
+      (btnClick)="goHome()"
+      bgColor="var(--white)"
+      textColor="var(--blue-dark)"
+    ></app-button>
+  </section>
+</main>

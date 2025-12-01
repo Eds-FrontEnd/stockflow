@@ -1,0 +1,21 @@
+<dialog
+  class="modal-container"
+  role="dialog"
+  aria-labelledby="modal-title"
+  aria-describedby="modal-description"
+>
+  <mat-icon class="modal-icon">info_outline</mat-icon>
+
+  <h2 id="modal-title">{{ data.message }}</h2>
+
+  <div class="actions-container">
+    <button
+      *ngFor="let action of data.actions"
+      mat-button
+      (click)="closeDialog(action.callback)"
+      [attr.aria-label]="action.text"
+    >
+      {{ action.text }}
+    </button>
+  </div>
+</dialog>

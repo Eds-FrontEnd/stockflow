@@ -1,0 +1,68 @@
+<dialog>
+  <h2 mat-dialog-title class="modal__title">Gerenciar Venda</h2>
+
+  <mat-dialog-content class="modal__content">
+    <div class="modal__row">
+      <mat-form-field
+        appearance="outline"
+        class="modal__field modal__field--vendedor"
+      >
+        <mat-label>Vendedor</mat-label>
+        <input
+          matInput
+          [(ngModel)]="data.vendedor"
+          aria-label="Nome do Vendedor"
+          required
+        />
+        <mat-error *ngIf="!data.vendedor">Vendedor é obrigatório.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        class="modal__field modal__field--valor"
+      >
+        <mat-label>Valor da venda</mat-label>
+        <input
+          type="text"
+          matInput
+          [value]="inputValor"
+          (input)="onValorInput($event)"
+          (focus)="onValorFocus()"
+          (blur)="onValorBlur()"
+          aria-label="Valor da Venda"
+          required
+        />
+        <mat-error *ngIf="!data.valor || data.valor <= 0">
+          Valor é obrigatório e deve ser maior que 0.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        class="modal__field modal__field--comissao"
+      >
+        <mat-label>Comissão</mat-label>
+        <input
+          type="text"
+          matInput
+          [value]="formattedComissao"
+          aria-label="Comissão"
+          min="0"
+          readonly
+        />
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="modal__actions">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!data.vendedor || !data.valor"
+      [mat-dialog-close]="data"
+    >
+      Salvar
+    </button>
+  </mat-dialog-actions>
+</dialog>

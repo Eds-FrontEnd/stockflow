@@ -1,0 +1,22 @@
+<section>
+  <app-sale-table
+    [columns]="columns"
+    [data]="data"
+    [loading]="loading"
+    [showActions]="true"
+    (action)="onTableAction($event)"
+    (saleAdded)="onSaleAdded($event)"
+  >
+  </app-sale-table>
+
+  <div class="totals" style="text-align: right; margin-top: 10px">
+    <p>
+      <strong>Total de Vendas: </strong>
+      {{ totalVendas$ | async | currency : "BRL" }}
+    </p>
+    <p>
+      <strong>Total de Comissões: </strong>
+      {{ totalComissao$ | async | currency : "BRL" }}
+    </p>
+  </div>
+</section>

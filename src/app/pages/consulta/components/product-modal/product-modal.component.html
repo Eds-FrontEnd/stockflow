@@ -1,0 +1,138 @@
+<dialog>
+  <h2 mat-dialog-title class="modal__title">Gerenciar Produto</h2>
+
+  <mat-dialog-content class="modal__content">
+    <div class="modal__row">
+      <mat-form-field
+        appearance="outline"
+        class="modal__field modal__field--codigo"
+      >
+        <mat-label>Código Produto</mat-label>
+        <input
+          matInput
+          [(ngModel)]="data.codigoProduto"
+          aria-label="Código do Produto"
+          required
+          #codigo="ngModel"
+        />
+        <mat-error *ngIf="codigo.invalid && codigo.touched">
+          Cod é obrigatório.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        class="modal__field modal__field--descricao"
+      >
+        <mat-label>Descrição</mat-label>
+        <input
+          matInput
+          [(ngModel)]="data.descricaoProduto"
+          aria-label="Descrição do Produto"
+          required
+          #descricao="ngModel"
+        />
+        <mat-error *ngIf="descricao.invalid && descricao.touched">
+          Descrição é obrigatória.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        class="modal__field modal__field--estoque"
+      >
+        <mat-label>+-Estoque</mat-label>
+        <input
+          type="number"
+          matInput
+          [(ngModel)]="data.estoque"
+          aria-label="Estoque do Produto"
+          required
+          #estoque="ngModel"
+        />
+        <mat-error *ngIf="estoque.invalid && estoque.touched">
+          É obrigatório.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div
+      *ngFor="let u of data.unidades; let i = index"
+      class="modal__unidade-row"
+    >
+      <mat-form-field
+        appearance="outline"
+        class="modal__field modal__field--unit"
+      >
+        <mat-label>Unidade</mat-label>
+        <input
+          matInput
+          [(ngModel)]="u.unidade"
+          (ngModelChange)="onUnidadeChange(u)"
+          aria-label="Unidade do Produto"
+          required
+          #unidade="ngModel"
+        />
+        <mat-error *ngIf="unidade.invalid && unidade.touched">
+          Unidade é obrigatória.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        class="modal__field modal__field--factor"
+      >
+        <mat-label>Fator</mat-label>
+        <input
+          type="number"
+          matInput
+          [(ngModel)]="u.fator"
+          aria-label="Fator da Unidade"
+          required
+          min="1"
+          #fator="ngModel"
+        />
+        <mat-error *ngIf="fator.invalid && fator.touched">
+          Fator é obrigatório.
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        *ngIf="i > 0"
+        mat-icon-button
+        color="warn"
+        (click)="removeUnidade(i)"
+        aria-label="Remover unidade"
+        class="modal__btn-delete"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="addUnidade()"
+      class="modal__add-unit"
+    >
+      + Adicionar Unidade
+    </button>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end" class="modal__actions">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="
+        !data.codigoProduto ||
+        !data.descricaoProduto ||
+        !data.estoque ||
+        !isUnidadesValid()
+      "
+      [mat-dialog-close]="data"
+    >
+      Salvar
+    </button>
+  </mat-dialog-actions>
+</dialog>

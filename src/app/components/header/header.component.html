@@ -1,0 +1,44 @@
+<header class="header" role="banner" aria-label="Cabeçalho principal">
+  <nav class="header__nav" aria-label="Navegação principal">
+    <a
+      [routerLink]="['home']"
+      class="app-logo-link"
+      aria-label="Ir para a página inicial"
+    >
+      <app-image
+        src="assets/images/logo.png"
+        alt="Logo da StockFlow"
+        title="Logo da StockFlow"
+        width="78"
+        height="34"
+        decoding="async"
+        fetchpriority="high"
+        [ariaHidden]="false"
+        [priority]="true"
+      ></app-image>
+    </a>
+
+    <div class="header__nav--menu">
+      <ul>
+        <li>
+          <a [routerLink]="['home']">
+            <mat-icon>home</mat-icon>
+            <span>Início</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['consulta']" routerLinkActive="active-link">
+            <mat-icon>list_alt</mat-icon>
+            <span>Consultar</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['vendedores']" routerLinkActive="active-link">
+            <mat-icon>group</mat-icon>
+            <span>Vendedor</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,15 @@
+<section aria-label="Filtro geral" class="filter-wrapper">
+  <mat-form-field appearance="outline" class="search">
+    <mat-label>Pesquisar...</mat-label>
+    <input
+      matInput
+      placeholder="Pesquisar..."
+      (input)="onFilterChange($event)"
+      aria-label="Campo de pesquisa"
+      class="filter-input"
+    />
+    <mat-icon>search</mat-icon>
+  </mat-form-field>
+
+  <app-datepicker (rangeChange)="onRangeChange($event)"></app-datepicker>
+</section>
